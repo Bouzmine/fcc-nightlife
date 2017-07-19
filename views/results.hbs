@@ -1,0 +1,30 @@
+<div class="padding">
+    <h2>Results for {{query}} (powered by Yelp)</h2>
+    <h3><a href="/">Go back to search</a></h3>
+</div>
+
+{{#each bars}}
+    <div class="bar">
+        <div class="row">
+            <div class="col-md-6">
+                <h4><a href="{{ url }}" target="_blank">{{name}}</a></h4>
+                <h5>Price: {{price}}</h5>
+                <h6>Rating: {{rating}} / 5</h6>
+            </div>
+            <div class="col-md-6 text-right">
+                <a href="/api/going/{{id}}/{{ encode ../query }}">{{ going }} going</a>
+            </div>
+        </div>
+        <hr></hr>
+    </div>
+{{/each}}
+
+<style>
+    .bar, .padding {
+        padding: 20px;
+    }
+    
+    hr {
+        margin-bottom: 0;
+    }
+</style>
